@@ -23,4 +23,4 @@ module.exports = (robot) ->
             resp +=    err if    err?
             resp += stdout if stdout?
             resp += stderr if stderr?
-            msg.send "[info][title]execute: #{command}[/title]#{resp}[/info]"
+            msg.send """[info][title]execute: #{command}[/title]#{resp}[/info]"""
