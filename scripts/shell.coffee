@@ -3,7 +3,9 @@ module.exports = (robot) ->
 		@exec = require('child_process').exec
 		command = "sh ./scripts/shell/test.sh"
 		msg.send "Command: #{command}"
+		resp = ""
 		@exec command, (error, stdout, stderr) ->
-			msg.send error if error?
-			msg.send stdout if stdout?
-			msg.send stderr if stderr?
+			resp += error if error?
+			resp += stdout if stdout?
+			resp += stderr if stderr?
+			msg.send #{resp}
