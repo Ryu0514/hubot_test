@@ -23,7 +23,7 @@ module.exports = (robot) ->
   key = "timeTracker"
 
   # hubot now <test> に反応させる
-  robot.hear /start (.*)/i, (msg) ->
+  robot.respond /start (.*)/i, (msg) ->
     # 発言から内容を取得。date,text,userの3つ
     date = new Date
     text = msg.match[1]
@@ -34,7 +34,8 @@ module.exports = (robot) ->
     tasks.push task
     robot.brain.set key, tasks
     robot.logger.debug "receive #{text} from #{user}"
-    msg.reply "task saved! #{tohhmmTime(date)} #{text}"
+    #msg.reply "task saved! #{tohhmmTime(date)} #{text}"
+    msg.send "task saved! #{tohhmmTime(date)} #{text}"
 
   robot.respond /today$/, (msg) ->
     date = new Date
@@ -48,4 +49,5 @@ module.exports = (robot) ->
       "#{task.time} #{task.task}"
     .join '\n'
     robot.logger.debug "receive #{message} from #{user}"
-    msg.reply "#{message}"
+    #msg.reply "#{message}"
+    msg.send "#{message}"
