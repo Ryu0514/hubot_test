@@ -39,6 +39,7 @@ module.exports = (robot) ->
 
   robot.respond /today$/, (msg) ->
     date = new Date
+    #user = msg.message.user.name
     user = msg.message.user.name
     tasks = robot.brain.get(key) ? []
     message = tasks.filter (task) ->
@@ -49,5 +50,5 @@ module.exports = (robot) ->
       "#{task.time} #{task.task}"
     .join '\n'
     robot.logger.debug "receive #{message} from #{user}"
-    #msg.reply "#{message}"
-    msg.send "#{message}"
+    msg.reply "#{message}"
+    #msg.send "#{message}"
