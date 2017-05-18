@@ -23,7 +23,7 @@ module.exports = (robot) ->
   key = "timeTracker"
 
   # hubot now <test> に反応させる
-  robot.hear /^now (.*)/i, (msg) ->
+  robot.hear /start (.*)/i, (msg) ->
     # 発言から内容を取得。date,text,userの3つ
     date = new Date
     text = msg.match[1]
