@@ -1,5 +1,5 @@
 {
-  "name": "hubot_test1",
+  "name": "hubot-test1",
   "version": "0.0.0",
   "private": true,
   "author": "Ryu0514 <r514.ldps@gmail.com>",
@@ -17,7 +17,7 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
-    "hubot-twitter": "^2.1.1"
+    "hubot-yammer": "^0.2.0"
   },
   "engines": {
     "node": "0.10.x"
