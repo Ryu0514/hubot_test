@@ -33,6 +33,7 @@ module.exports = (robot) ->
     task = { user: user, date: toYmdDate(date), time: tohhmmTime(date), task: text }
     tasks.push task
     robot.brain.set key, tasks
+    hubot.logger.debug "receive #{text} from #{user}"
     msg.reply "task saved! #{tohhmmTime(date)} #{text}"
 
   robot.respond /today$/, (msg) ->
@@ -46,4 +47,5 @@ module.exports = (robot) ->
     .map (task) ->
       "#{task.time} #{task.task}"
     .join '\n'
+    hubot.logger.debug "receive #{message} from #{user}"
     msg.reply "#{message}"
