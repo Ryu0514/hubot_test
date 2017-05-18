@@ -28,7 +28,7 @@ module.exports = (robot) ->
     date = new Date
     text = msg.match[1]
     user = msg.message.user.name
-
+    robot.logger.debug "fetch message from #{user}"
     tasks = robot.brain.get(key) ? []
     task = { user: user, date: toYmdDate(date), time: tohhmmTime(date), task: text }
     tasks.push task
