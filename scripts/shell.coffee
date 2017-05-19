@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-	robot.respond /switch.sh (.*)/, (msg) ->
+	robot.respond /switch.sh STG2 結合1/, (msg) ->
 		@exec = require('child_process').exec
 		command = "sh ./scripts/shell/stgSwitch.sh"
 		msg.send "Command: #{command}"
