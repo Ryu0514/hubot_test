@@ -1,5 +1,4 @@
  module.exports = (robot) ->
-	robot.respond /test_shell/, (msg) ->
 	robot.respond /switch.sh/, (msg) ->
 		@exec = require('child_process').exec
 		command = "sh ./scripts/shell/test.sh"
