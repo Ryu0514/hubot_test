@@ -8,7 +8,7 @@
 #   ネタ/ジョーク系のbot全般
 
 module.exports = (robot) ->
-  robot.hear /ぬる、ぬる、ぽ/, (msg) ->
+  robot.hear /ぬるぽ/, (msg) ->
     msg.send """
 ```
    Λ＿Λ     ＼＼
