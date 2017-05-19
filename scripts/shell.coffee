@@ -9,4 +9,3 @@ module.exports = (robot) ->
 			resp += stdout if stdout?
 			resp += stderr if stderr?
 			msg.send #{resp}
-    msg.send "Change STG2 to Bind1"
