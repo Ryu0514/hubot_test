@@ -9,4 +9,4 @@ module.exports = (robot) ->
 			resp += stdout if stdout?
 			resp += stderr if stderr?
 			msg.send #{resp}
-    msg.send "STGの接続先を、結合1環境に切り替えました"
+    msg.send "STG2面の接続先を、結合1環境に切り替えました"
