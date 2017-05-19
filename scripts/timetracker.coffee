@@ -39,10 +39,10 @@ module.exports = (robot) ->
 
   robot.respond /today$/, (msg) ->
     date = new Date
-    #user = msg.message.user.name
     user = msg.message.user.name
     tasks = robot.brain.get(key) ? []
-    message = tasks.filter (task) ->
+    message = "本日#{user}さんが行ったタスクは"
+    message = message + tasks.filter (task) ->
       task.date == toYmdDate(date)
     .filter (task) ->
       task.user == user
@@ -51,4 +51,4 @@ module.exports = (robot) ->
     .join '\n'
     robot.logger.debug "receive #{message} from #{user}"
     msg.reply "#{message}"
-    #msg.send "#{message}"
+
