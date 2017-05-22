@@ -1,1 +1,1 @@
-web: bin/hubot -a yammer
+web: bin/hubot -a mattermost
